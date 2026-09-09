@@ -6,7 +6,9 @@
 <meta name="theme-color" content="#0b7775">
 <meta name="description" content="AIDA NAZIRA BINTI KAMARUL HISYAM — JR. MARINE BIOLOGIST, Angsana Teluk Bahang Penang.">
 <title>Aida Nazira | Jr. Marine Biologist</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
+  
 :root{
   --ocean:#0b7775;
   --deep:#064f52;
@@ -57,7 +59,42 @@ h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ocea
   display:flex;gap:12px;align-items:flex-start;
   padding:10px 0;color:var(--ink);text-decoration:none;
 }
-.icon{width:25px;text-align:center}
+.icon{
+  width:40px;
+  height:40px;
+  min-width:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:var(--seafoam);
+  color:var(--ocean);
+  font-size:18px;
+  box-shadow:0 4px 10px rgba(6,79,82,.08);
+}
+
+.icon i{
+  line-height:1;
+}
+
+.item{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding:12px 0;
+  color:var(--ink);
+  text-decoration:none;
+  transition:all .2s ease;
+}
+
+.item:hover{
+  transform:translateX(3px);
+}
+
+.item:hover .icon{
+  background:var(--ocean);
+  color:white;
+}
 .item span:last-child{overflow-wrap:anywhere}
 .socials{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .social{
@@ -96,9 +133,20 @@ h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ocea
 
       <section class="section">
         <h2>Contact</h2>
-        <a class="item" href="tel:+6013601691"><span class="icon">📱</span><span>+60 13-601 6911</span></a>
-        <a class="item" href="https://wa.me/6013601691"><span class="icon">💬</span><span>WhatsApp</span></a>
-        <a class="item" href="mailto:Aida.Nazira@angsana.com"><span class="icon">✉️</span><span>Aida.Nazira@angsana.com</span></a>
+<a class="item" href="tel:+60123601691">
+  <span class="icon"><i class="fa-solid fa-phone"></i></span>
+  <span>+60 12-360 1691</span>
+</a>
+
+<a class="item" href="https://wasap.my/60123601691/HeyAida!KeepingintouchviatheQRcode.">
+  <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+  <span>WhatsApp</span>
+</a>
+
+<a class="item" href="mailto:Aida.Nazira@angsana.com">
+  <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+  <span>Aida.Nazira@angsana.com</span>
+</a>
       </section>
 
       <section class="section">
@@ -117,8 +165,8 @@ h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ocea
       </section>
 
       <div class="cta">
-        <strong>Explore Marine Center</strong>
-        <span>Marine education • conservation • ocean awareness</span>
+        <strong>Explore Marine Education Center</strong>
+        <span> Discover • Connect • Conserve </span>
       </div>
     </section>
   </main>
