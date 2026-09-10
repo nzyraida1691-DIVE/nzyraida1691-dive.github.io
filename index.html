@@ -3,174 +3,1008 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b7775">
+
+<meta name="theme-color" content="#063b4a">
+
 <meta name="description" content="AIDA NAZIRA BINTI KAMARUL HISYAM — JR. MARINE BIOLOGIST, Angsana Teluk Bahang Penang.">
+
 <title>Aida Nazira | Jr. Marine Biologist</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-  
+
 :root{
-  --ocean:#0b7775;
-  --deep:#064f52;
-  --seafoam:#dff4f0;
+  --ocean:#087f8c;
+  --deep:#043847;
+  --deep2:#062b38;
+  --seafoam:#dff7f4;
   --ink:#173536;
-  --muted:#5e7374;
-  --paper:#f7fbfa;
+  --muted:#5d7478;
   --white:#ffffff;
-  --line:#d9e9e6;
+  --glass:rgba(255,255,255,.91);
+  --line:rgba(255,255,255,.55);
 }
-*{box-sizing:border-box}
+
+/* ------------------------------
+   GENERAL
+------------------------------ */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   color:var(--ink);
-  background:linear-gradient(160deg,#eef9f7 0%,#fff 45%,#e8f5f3 100%);
+
   min-height:100vh;
+
+  /* Marine background */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,45,63,.35),
+      rgba(3,83,98,.25)
+    ),
+    url("marine-background.jpg")
+    center center / cover fixed no-repeat;
+
+  position:relative;
 }
-.container{max-width:760px;margin:auto;padding:28px 18px 50px}
+
+/* Dark ocean overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(88,220,221,.16),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0,30,45,.18),
+      rgba(0,40,55,.35)
+    );
+
+  pointer-events:none;
+  z-index:-1;
+}
+
+
+/* ------------------------------
+   PAGE CONTAINER
+------------------------------ */
+
+.container{
+  max-width:760px;
+  margin:auto;
+  padding:28px 18px 50px;
+}
+
+
+/* ------------------------------
+   MAIN CARD
+------------------------------ */
+
 .card{
-  background:rgba(255,255,255,.94);
-  border:1px solid var(--line);
-  border-radius:28px;
-  box-shadow:0 18px 60px rgba(6,79,82,.10);
+
+  background:rgba(255,255,255,.90);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  border:1px solid rgba(255,255,255,.75);
+
+  border-radius:30px;
+
+  box-shadow:
+    0 25px 80px rgba(0,30,40,.35),
+    0 5px 25px rgba(0,80,90,.15);
+
   overflow:hidden;
+
+  animation:cardAppear .7s ease;
 }
+
+@keyframes cardAppear{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* ------------------------------
+   HERO
+------------------------------ */
+
 .hero{
-  padding:30px 24px 24px;
+
+  padding:34px 24px 28px;
+
   text-align:center;
-  background:linear-gradient(145deg,#f5fcfb,#dff4f0);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(238,253,251,.95),
+      rgba(211,243,241,.88)
+    );
+
+  position:relative;
 }
-.logo{width:118px;height:118px;object-fit:contain;margin-bottom:8px}
-h1{font-family:Georgia,serif;letter-spacing:.04em;font-size:25px;margin:4px 0 8px;color:var(--deep)}
-.title{font-weight:700;color:var(--ocean);letter-spacing:.12em;font-size:13px}
-.company{margin-top:7px;color:var(--muted);font-size:14px}
-.content{padding:24px}
-.save{
-  display:block;text-align:center;text-decoration:none;
-  background:var(--ocean);color:white;font-weight:800;
-  padding:15px 18px;border-radius:14px;margin-bottom:20px;
-  box-shadow:0 8px 22px rgba(11,119,117,.20);
+
+
+/* decorative wave */
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:-1px;
+
+  height:18px;
+
+  background:
+    radial-gradient(
+      35px 10px at 20px 0,
+      transparent 60%,
+      rgba(255,255,255,.7) 62%
+    );
+
+  opacity:.5;
 }
-.save:hover{background:var(--deep)}
-.section{padding:18px 0;border-top:1px solid var(--line)}
-.section:first-of-type{border-top:0}
-h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ocean);margin:0 0 13px}
-.item{
-  display:flex;gap:12px;align-items:flex-start;
-  padding:10px 0;color:var(--ink);text-decoration:none;
+
+
+/* ------------------------------
+   LOGO
+------------------------------ */
+
+.logo{
+
+  width:118px;
+  height:118px;
+
+  object-fit:contain;
+
+  margin-bottom:8px;
+
+  filter:drop-shadow(
+    0 8px 12px rgba(0,70,80,.15)
+  );
 }
-.icon{
-  width:40px;
-  height:40px;
-  min-width:40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:12px;
-  background:var(--seafoam);
+
+
+/* ------------------------------
+   NAME
+------------------------------ */
+
+h1{
+
+  font-family:Georgia,serif;
+
+  letter-spacing:.045em;
+
+  font-size:25px;
+
+  margin:4px 0 9px;
+
+  color:var(--deep);
+
+  line-height:1.25;
+}
+
+
+/* ------------------------------
+   JOB TITLE
+------------------------------ */
+
+.title{
+
+  font-weight:800;
+
   color:var(--ocean);
-  font-size:18px;
-  box-shadow:0 4px 10px rgba(6,79,82,.08);
+
+  letter-spacing:.14em;
+
+  font-size:13px;
 }
+
+
+/* ------------------------------
+   COMPANY
+------------------------------ */
+
+.company{
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  font-weight:600;
+}
+
+
+/* ------------------------------
+   MARINE IDENTITY LINE
+------------------------------ */
+
+.identity{
+
+  margin-top:14px;
+
+  font-size:11px;
+
+  letter-spacing:.11em;
+
+  color:#35676b;
+
+  font-weight:700;
+}
+
+
+/* ------------------------------
+   CONTENT
+------------------------------ */
+
+.content{
+
+  padding:25px;
+
+  background:
+    rgba(255,255,255,.78);
+}
+
+
+/* ------------------------------
+   SAVE CONTACT BUTTON
+------------------------------ */
+
+.save{
+
+  display:block;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--ocean),
+      #05616e
+    );
+
+  color:white;
+
+  font-weight:800;
+
+  padding:15px 18px;
+
+  border-radius:15px;
+
+  margin-bottom:20px;
+
+  box-shadow:
+    0 10px 25px rgba(5,100,110,.22);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.save:hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(5,100,110,.30);
+}
+
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+
+.section{
+
+  padding:20px 0;
+
+  border-top:
+    1px solid rgba(10,100,105,.13);
+}
+
+.section:first-of-type{
+  border-top:0;
+}
+
+
+/* ------------------------------
+   SECTION TITLES
+------------------------------ */
+
+h2{
+
+  font-size:12px;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  color:var(--ocean);
+
+  margin:0 0 13px;
+
+  font-weight:800;
+}
+
+
+/* ------------------------------
+   CONTACT / WORKPLACE ITEMS
+------------------------------ */
+
+.item{
+
+  display:flex;
+
+  gap:14px;
+
+  align-items:center;
+
+  padding:12px 0;
+
+  color:var(--ink);
+
+  text-decoration:none;
+
+  transition:
+    transform .2s ease,
+    color .2s ease;
+}
+
+.item:hover{
+
+  transform:translateX(4px);
+
+  color:var(--ocean);
+}
+
+
+/* ------------------------------
+   ICON BOX
+------------------------------ */
+
+.icon{
+
+  width:42px;
+  height:42px;
+
+  min-width:42px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e2f8f5,
+      #ccefeb
+    );
+
+  color:var(--ocean);
+
+  font-size:17px;
+
+  box-shadow:
+    0 5px 12px rgba(0,70,80,.08);
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.item:hover .icon{
+
+  background:var(--ocean);
+
+  color:white;
+
+  transform:scale(1.05);
+}
+
 
 .icon i{
   line-height:1;
 }
 
-.item{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  padding:12px 0;
-  color:var(--ink);
+
+.item span:last-child{
+  overflow-wrap:anywhere;
+}
+
+
+/* ------------------------------
+   GOOGLE MAPS WORKPLACE LINK
+------------------------------ */
+
+.location-link{
+
+  display:block;
+
   text-decoration:none;
-  transition:all .2s ease;
+
+  color:inherit;
+
+  padding:5px 0;
 }
 
-.item:hover{
-  transform:translateX(3px);
+.location-link:hover{
+  color:var(--ocean);
 }
 
-.item:hover .icon{
-  background:var(--ocean);
-  color:white;
+.location-name{
+
+  font-weight:800;
+
+  margin-bottom:4px;
 }
-.item span:last-child{overflow-wrap:anywhere}
-.socials{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+
+.location-address{
+
+  font-size:13px;
+
+  color:var(--muted);
+
+  line-height:1.55;
+}
+
+.location-action{
+
+  margin-top:6px;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  color:var(--ocean);
+
+  letter-spacing:.04em;
+}
+
+
+/* ------------------------------
+   SOCIAL BUTTONS
+------------------------------ */
+
+.socials{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:10px;
+}
+
 .social{
-  display:block;text-decoration:none;text-align:center;
-  padding:12px;border:1px solid var(--line);border-radius:12px;
-  color:var(--deep);font-weight:700;background:#fbfefd;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  text-decoration:none;
+
+  padding:13px 10px;
+
+  border:
+    1px solid rgba(10,100,105,.13);
+
+  border-radius:13px;
+
+  color:var(--deep);
+
+  font-weight:700;
+
+  background:
+    rgba(255,255,255,.72);
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
 }
+
+.social:hover{
+
+  transform:translateY(-2px);
+
+  background:white;
+
+  box-shadow:
+    0 8px 20px rgba(0,70,80,.10);
+}
+
+
+/* ------------------------------
+   MARINE CENTER CTA
+------------------------------ */
+
 .cta{
-  text-align:center;margin-top:22px;padding:20px;border-radius:18px;
-  background:var(--deep);color:white;
+
+  text-align:center;
+
+  margin-top:23px;
+
+  padding:23px 18px;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--deep),
+      #075b67
+    );
+
+  color:white;
+
+  box-shadow:
+    0 12px 30px rgba(0,50,65,.20);
+
+  position:relative;
+
+  overflow:hidden;
 }
-.cta strong{display:block;font-size:18px;margin-bottom:5px}
-.cta span{font-size:13px;opacity:.9}
-.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:18px}
+
+
+/* decorative bubbles */
+
+.cta::before,
+.cta::after{
+
+  content:"";
+
+  position:absolute;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.10);
+}
+
+.cta::before{
+
+  width:90px;
+  height:90px;
+
+  right:-30px;
+  top:-35px;
+}
+
+.cta::after{
+
+  width:35px;
+  height:35px;
+
+  left:20px;
+  bottom:-15px;
+}
+
+
+.cta strong{
+
+  display:block;
+
+  font-size:18px;
+
+  margin-bottom:6px;
+
+  position:relative;
+}
+
+.cta span{
+
+  font-size:13px;
+
+  opacity:.9;
+
+  position:relative;
+}
+
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+.footer{
+
+  text-align:center;
+
+  color:white;
+
+  font-size:11px;
+
+  margin-top:18px;
+
+  text-shadow:
+    0 2px 5px rgba(0,30,40,.5);
+}
+
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
 @media(max-width:480px){
-  .container{padding:12px 10px 35px}
-  .hero{padding:24px 16px 20px}
-  .content{padding:20px}
-  h1{font-size:21px}
-  .socials{grid-template-columns:1fr}
+
+  .container{
+
+    padding:
+      12px
+      10px
+      35px;
+  }
+
+  .hero{
+
+    padding:
+      25px
+      16px
+      22px;
+  }
+
+  .content{
+
+    padding:20px;
+  }
+
+  h1{
+
+    font-size:21px;
+  }
+
+  .socials{
+
+    grid-template-columns:1fr;
+  }
+
+  .logo{
+
+    width:105px;
+    height:105px;
+  }
+
 }
+
+
+/* ------------------------------
+   REDUCED MOTION
+------------------------------ */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+
+    animation:none !important;
+
+    transition:none !important;
+  }
+}
+
 </style>
 </head>
+
+
 <body>
+
 <div class="container">
-  <main class="card">
-    <header class="hero">
-      <img class="logo" src="angsana-logo.png" alt="Angsana Teluk Bahang Penang logo">
-      <h1>AIDA NAZIRA BINTI KAMARUL HISYAM</h1>
-      <div class="title">JR. MARINE BIOLOGIST</div>
-      <div class="company">ANGSANA TELUK BAHANG PENANG</div>
-    </header>
 
-    <section class="content">
-      <a class="save" href="contact.vcf">＋ SAVE MY CONTACT</a>
+<main class="card">
 
-      <section class="section">
-        <h2>Contact</h2>
-<a class="item" href="tel:+60123601691">
-  <span class="icon"><i class="fa-solid fa-phone"></i></span>
-  <span>+60 12-360 1691</span>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+  <img
+    class="logo"
+    src="angsana-logo.png"
+    alt="Angsana Teluk Bahang Penang logo"
+  >
+
+  <h1>
+    AIDA NAZIRA BINTI KAMARUL HISYAM
+  </h1>
+
+  <div class="title">
+    JR. MARINE BIOLOGIST
+  </div>
+
+  <div class="company">
+    ANGsana TELUK BAHANG PENANG
+  </div>
+
+  <div class="identity">
+    MARINE EDUCATION • CONSERVATION • OCEAN
+  </div>
+
+</header>
+
+
+<section class="content">
+
+
+<!-- =========================
+     SAVE CONTACT
+========================= -->
+
+<a
+  class="save"
+  href="contact.vcf"
+>
+  <i class="fa-solid fa-address-card"></i>
+  &nbsp; SAVE MY CONTACT
 </a>
 
-<a class="item" href="https://wa.me/60123601691?text=Hey%20Aida!%20Keeping%20in%20touch%20via%20the%20QR%20code.">
-  <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
-  <span>WhatsApp</span>
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section">
+
+<h2>Contact</h2>
+
+
+<a
+  class="item"
+  href="tel:+60123601691"
+>
+
+  <span class="icon">
+    <i class="fa-solid fa-phone"></i>
+  </span>
+
+  <span>
+    +60 12-360 1691
+  </span>
+
 </a>
 
-<a class="item" href="mailto:Aida.Nazira@angsana.com">
-  <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-  <span>Aida.Nazira@angsana.com</span>
+
+<a
+  class="item"
+  href="https://wa.me/60123601691?text=Hey%20Aida%21%20Keeping%20in%20touch%20via%20the%20QR%20code."
+  target="_blank"
+  rel="noopener"
+>
+
+  <span class="icon">
+    <i class="fa-brands fa-whatsapp"></i>
+  </span>
+
+  <span>
+    WhatsApp
+  </span>
+
 </a>
-      </section>
 
-      <section class="section">
-        <h2>Workplace</h2>
-        <div class="item"><span class="icon">📍</span><span>Angsana Teluk Bahang, 11 Jalan Teluk Bahang, Teluk Bahang, 11050 Penang, Malaysia</span></div>
-      </section>
 
-      <section class="section">
-        <h2>Connect</h2>
-        <div class="socials">
-          <a class="social" href="https://www.angsana.com/malaysia/penang" target="_blank" rel="noopener">Angsana Website</a>
-          <a class="social" href="https://www.instagram.com/angsana_telukbahang/" target="_blank" rel="noopener">Instagram</a>
-          <a class="social" href="https://www.tiktok.com/@angsana.telukbahang" target="_blank" rel="noopener">TikTok</a>
-          <a class="social" href="https://www.facebook.com/AngsanaTelukBahang" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </section>
+<a
+  class="item"
+  href="mailto:Aida.Nazira@angsana.com"
+>
 
-      <div class="cta">
-        <strong>Explore Marine Education Center</strong>
-        <span> Discover • Connect • Conserve </span>
-      </div>
-    </section>
-  </main>
-  <div class="footer">Aida Nazira • Jr. Marine Biologist • Angsana Teluk Bahang Penang</div>
+  <span class="icon">
+    <i class="fa-solid fa-envelope"></i>
+  </span>
+
+  <span>
+    Aida.Nazira@angsana.com
+  </span>
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     WORKPLACE
+========================= -->
+
+<section class="section">
+
+<h2>Workplace</h2>
+
+
+<a
+  class="item location-link"
+  href="https://www.google.com/maps/search/?api=1&query=Angsana+Teluk+Bahang+Penang"
+  target="_blank"
+  rel="noopener"
+>
+
+  <span class="icon">
+    <i class="fa-solid fa-location-dot"></i>
+  </span>
+
+
+  <span>
+
+    <div class="location-name">
+      Angsana Teluk Bahang
+    </div>
+
+    <div class="location-address">
+      11 Jalan Teluk Bahang,
+      Teluk Bahang,
+      11050 Penang, Malaysia
+    </div>
+
+    <div class="location-action">
+      <i class="fa-solid fa-map-location-dot"></i>
+      &nbsp; VIEW LOCATION • PHOTOS • REVIEWS
+    </div>
+
+  </span>
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     CONNECT
+========================= -->
+
+<section class="section">
+
+<h2>Connect</h2>
+
+
+<div class="socials">
+
+
+<a
+  class="social"
+  href="https://www.angsana.com/malaysia/penang"
+  target="_blank"
+  rel="noopener"
+>
+
+  <i class="fa-solid fa-globe"></i>
+
+  Angsana Website
+
+</a>
+
+
+<a
+  class="social"
+  href="https://www.instagram.com/angsana_telukbahang/"
+  target="_blank"
+  rel="noopener"
+>
+
+  <i class="fa-brands fa-instagram"></i>
+
+  Instagram
+
+</a>
+
+
+<a
+  class="social"
+  href="https://www.tiktok.com/@angsana.telukbahang"
+  target="_blank"
+  rel="noopener"
+>
+
+  <i class="fa-brands fa-tiktok"></i>
+
+  TikTok
+
+</a>
+
+
+<a
+  class="social"
+  href="https://www.facebook.com/AngsanaTelukBahang"
+  target="_blank"
+  rel="noopener"
+>
+
+  <i class="fa-brands fa-facebook"></i>
+
+  Facebook
+
+</a>
+
+
 </div>
+
+</section>
+
+
+<!-- =========================
+     MARINE CENTER
+========================= -->
+
+<div class="cta">
+
+  <strong>
+    <i class="fa-solid fa-water"></i>
+    &nbsp; Explore Marine Education Center
+  </strong>
+
+  <span>
+    Discover • Connect • Conserve
+  </span>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<div class="footer">
+
+  Aida Nazira • Jr. Marine Biologist
+  • Angsana Teluk Bahang Penang
+
+</div>
+
+
+</div>
+
 </body>
 </html>
