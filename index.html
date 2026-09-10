@@ -63,7 +63,7 @@ body{
       rgba(3,83,98,.25)
     ),
     url("marine-background.jpg")
-    center center / cover fixed no-repeat;
+    center center / cover no-repeat;
 
   position:relative;
 }
@@ -680,16 +680,25 @@ h2{
 
 @media(max-width:480px){
 
-  .container{
+  body{
+    background-size:cover;
+    background-position:center center;
+    background-attachment:scroll;
+  }
 
+  .container{
+    width:100%;
     padding:
-      12px
+      14px
       20px
       35px;
   }
 
-  .hero{
+  .card{
+    width:100%;
+  }
 
+  .hero{
     padding:
       25px
       16px
@@ -697,28 +706,23 @@ h2{
   }
 
   .content{
-
     padding:20px;
   }
 
   h1{
-
     font-size:21px;
   }
 
   .socials{
-
     grid-template-columns:1fr;
   }
 
   .logo{
-
     width:105px;
     height:105px;
   }
 
 }
-
 
 /* ------------------------------
    REDUCED MOTION
